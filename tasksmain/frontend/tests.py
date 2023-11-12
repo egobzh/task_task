@@ -13,7 +13,6 @@ class UserTestCase(TestCase):
         response = self.c.get('/')
         self.assertEqual(response.status_code, HTTPStatus.OK)
     def test_is_ok_task_add(self):
-        headers = {'task': 'тест запси!'}
         response = self.c.post('/task_add', {'task': 'тест запси!'})
         self.assertEqual(response.status_code, HTTPStatus.FOUND)
     def test_is_ok_task_complete(self):
